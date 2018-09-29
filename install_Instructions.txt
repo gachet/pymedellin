@@ -1,0 +1,33 @@
+# Install Instructions
+
+## Install Firefox
+sudo apt-get install firefox
+
+## Install pip
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py
+
+## Install virtualenvwrapper
+sudo pip3 install virtualenv virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+source ~/.bashrc
+
+## Create a new virtualenv
+mkvirtualenv -p python3 pymedellin
+#workon pypereira
+source $HOME/.virtualenvs/pymedellin/bin/activate
+
+## Install dependencies
+sudo apt-get install --no-install-recommends --no-install-suggests -y python-dev libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev python3.5-dev libgtk-3-dev libgtk2.0-dev
+pip install -r requirements.pip
+
+## Install geckodriver
+wget https://github.com/mozilla/geckodriver/releases/download/v0.22.0/geckodriver-v0.22.0-linux64.tar.gz
+tar -xvf geckodriver-v0.22.0-linux64.tar.gz
+chmod +x geckodriver
+sudo mv geckodriver /usr/local/bin/
+sudo apt-get install --no-install-recommends --no-install-suggests -y xvfb
+
+
