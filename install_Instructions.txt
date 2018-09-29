@@ -16,8 +16,7 @@ source ~/.bashrc
 
 ## Create a new virtualenv
 mkvirtualenv -p python3 pymedellin
-#workon pypereira
-source $HOME/.virtualenvs/pymedellin/bin/activate
+workon pymedellin
 
 ## Install dependencies
 sudo apt-get install --no-install-recommends --no-install-suggests -y python-dev libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev python3.5-dev libgtk-3-dev libgtk2.0-dev
